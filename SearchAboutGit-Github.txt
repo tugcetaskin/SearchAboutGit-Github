@@ -1,0 +1,430 @@
+1- Git ve Github'ın Yazılım Geliştirmeda ki Önemi
+
+Git ve GitHub, yazılım geliştirme süreçlerinde önemli rol oynayan araçlardır. İşte bu araçların önemleri:
+
+---Versiyon Kontrolü---
+
+Git, bir versiyon kontrol sistemi olarak kullanılır. Bu, yazılım projenizin farklı versiyonlarını kaydedip yönetmenizi sağlar. Her değişiklik "commit" olarak adlandırılır ve bu, projenin bir önceki durumunun anında geri yüklenebilmesini sağlar.
+
+---İşbirliği ve Eş Zamanlı Çalışma---
+
+Bir ekip halinde çalışırken, farklı geliştiricilerin aynı projada aynı anda çalışmasını kolaylaştırır. Farklı geliştiriciler kendi kopyalarında değişiklikler yapabilir ve bunları ana projeye entegre etmek için "merge" işlemi yapabilir.
+
+---Dal (Branch) Yönetimi---
+
+Git, projenin farklı versiyonlarını ayrı "dallar" (branches) olarak adlandırılan izole çalışma alanlarında geliştirme olanağı sağlar. Bu, farklı özellikler veya hata düzeltmeleri üzerinde aynı anda çalışabilmenizi ve sonrasında bunları ana projeye entegre edebilmenizi sağlar.
+
+---Hata Takibi ve Raporlama---
+
+GitHub, projenizin "issues" adını verdiği hata takip ve görev yönetimi için bir platform sağlar. Bu, ekibin projede çalışması gereken görevleri, hataları ve geliştirmeleri belirlemesini ve takip etmesini sağlar.
+
+---Code Review (Kod İncelemesi)---
+
+GitHub, geliştiricilerin birbirlerinin kodunu incelemesini ve geri bildirimde bulunmasını kolaylaştırır. Bu, daha kaliteli kod üretimini teşvik eder.
+
+---Dokümantasyon---
+
+GitHub, projenin dökümantasyonunu sağlamak için README dosyaları ve wiki sayfaları gibi araçlar sunar. Bu, projenin nasıl çalıştığını, nasıl kurulduğunu ve nasıl kullanılacağını anlatan belgelerin paylaşılmasını kolaylaştırır.
+
+---Sürüm Yönetimi---
+
+GitHub, projenin farklı sürümlerini ve yayınlarını yönetmenizi sağlar. Bu, kullanıcıların belirli bir sürüme geri dönmesini veya belirli bir sürümde çalışmalarını sağlar.
+
+---Topluluk Katılımı---
+
+GitHub, projenizi açık kaynaklı yaparak dünya genelindeki geliştiricilerin katılımını teşvik eder. Bu, projenin daha hızlı büyümesini ve gelişmesini sağlar.
+Bu araçlar, yazılım geliştirme sürecini daha düzenli, etkili ve işbirlikçi hale getirir. Ayrıca, projenin geçmişini takip etmek, hataları düzeltmek ve yeni özellikler eklemek gibi süreçleri de kolaylaştırır.
+
+
+2- Git Deposu Oluşturmanın İki Farklı Yolunu Açıklayınız(Git İnit - Git Clone)
+
+---Git İnit---
+"git init" komutunu çalıştırdığınızda, Git bu dizinde bir depo oluşturur. Bu depo, proje dosyalarını ve tüm geçmiş sürümlerini saklayacaktır.
+
+---Git Clone---
+"git clone" komutunu kullanarak Github'ta bulunan bir repository'i bilgisayarınıza kopyalayabilirsiniz.
+
+
+3- Git Status, Git Add, Git Commit KOmutlarını Açıklayınız.
+
+---Git Status---
+"git status" komutu, çalışma dizinindeki dosyaların ve değişikliklerin durumunu gösterir. Bu komutu çalıştırdığınızda, Git sizinle çalışma dizininizdeki dosyaların durumu hakkında bilgi paylaşır.
+git status komutunu çalıştırdığınızda, mevcut durum hakkında bir rapor alırsınız. Bu rapor size:
+
+Hangi dosyaların takip edildiği (staged),
+Hangi dosyaların takip edilmediği,
+Hangi dosyaların değiştirildiği,
+Hangi dosyaların commit edilebilir olduğu (staged),
+
+gibi bilgileri sunar.
+
+---Git Add---
+"git add" komutu, çalışma dizisindeki dosyaları belirli bir aşamaya (staging area) eklemenizi sağlar. Bu aşama, bir sonraki commit'in içereceği dosyaları belirtir.
+Özellikle, değişiklik yaptığınız dosyaları veya yeni dosyaları eklemek için kullanılır.
+
+git add dosya_adı
+git add . (Tüm Dosyalar)
+
+---Git Commit---
+"git commit" komutu, çalışma dizisindeki staged (aşamaya eklenmiş) dosyaların bir "snapshot"ını oluşturur.
+Bu, projenizin bir anlık görüntüsünü çeker ve bu anlık görüntüye bir açıklama eklemenizi ister. Bu açıklama, commit'iniz hakkında bilgi sağlar.
+
+git commit -m "Açıklama buraya yazılır"
+
+
+4- Git Reposunda ki En Son Commit'e Nasıl Geri Dönülür
+
+Git reposundaki en son komuta dönmek için git checkout komutu kullanılır. Eğer en son yaptığınız commit'e geri dönmek istiyorsanız, HEAD işaretçisini kullanabilir.
+
+1.En Son Commit'e Dönme: git checkout HEAD
+Bu komut, en son commit'e geri döner. Bu noktada, projenizin en son durumuna geri dönmüş olacaksınız.
+
+2.Belirli Bir Dosyanın En Son Commit Haline Getirilmesi: git checkout HEAD dosya_adı
+Bu komut, dosya_adı olarak belirttiğiniz dosyanın en son commit haline getirilmesini sağlar.
+
+Lütfen dikkat: git checkout komutu gerçekten dikkatli kullanılmalıdır. Eğer daha önce yapılan değişiklikleri kaybetme riski taşıyorsa, bu komutu kullanmadan önce mutlaka bir yedekleme (backup) yapılmalı.
+
+
+5- Git Pull Komutunun İşlevini ve Kullanımını Açıklayınız.
+
+"git pull" komutu, uzak bir depodan (örneğin, GitHub gibi) güncellemeleri almak için kullanılır. Bu komut, iki ayrı işlemi birleştirir: git fetch ve git merge.
+
+İşlevi şu adımları içerir:
+
+git fetch: Uzak depodaki güncellemeleri yerel depo ile senkronize etmek için kullanılır. Yani, uzak depodaki değişiklikler bilgisayarınıza indirilir, ancak yerel dosyalarınız henüz güncellenmez. Bu, potansiyel çakışmaları inceleme fırsatı verir.
+
+git merge: Uzaktan alınan değişiklikleri, mevcut çalışma dizinizdeki dosyalarla birleştirir. Eğer herhangi bir çakışma olmazsa, bu işlem otomatik olarak gerçekleşir.
+
+Kullanımı:
+git pull [uzak_depo_adı] [dal_adı] (git pull origin main)
+Bu komut, uzak depodaki main dalının en son halini alır ve mevcut dalınızla birleştirir.
+
+Not: Eğer çakışmalar olursa, Git bu çakışmaları işaretler ve çözülmesi için size rehberlik eder. Bu durumda, dosyaları manuel olarak düzenlemeniz ve çakışmaları çözmeniz gerekir.
+
+
+6- Git Branch Nedir ve Neden Önemlidir?
+
+Git branch, projenizin farklı versiyonları veya geliştirme yollarını temsil eden işaretçilerdir. Her bir dal, projenin belirli bir noktasını gösterir ve üzerinde farklı değişiklikler yapılabilir.
+
+Git branch'lerinin önemi şunlardır:
+
+-Ayrı Geliştirme Yolları: Bir projenin farklı özelliklerini veya geliştirmelerini farklı dallarda yapabilirsiniz. Bu, ekip üyelerinin aynı anda farklı özellikler üzerinde çalışmasını sağlar.
+
+-Stabil ve Geliştirme Dalları: Genellikle bir "stabil" dal ve bir veya daha fazla "geliştirme" dalı oluşturulur. Stabil dal, mevcut ve çalışır durumdaki kodu temsil ederken, geliştirme dalları üzerinde yeni özellikler eklenir.
+
+-Hata Düzeltmeleri ve Bakım: Stabil dalda meydana gelen hatalar düzeltilir ve bu dal güncellenir. Geliştirme daları ise yeni özellikler eklemek için kullanılır.
+
+-Sürüm Yönetimi: Branch'ler, farklı sürümler üzerinde çalışmak için kullanılabilir. Örneğin, bir sürümü güncellediğinizde, stabil dalı kullanarak bu sürümdeki hataları düzeltebilirsiniz.
+
+-Paralel Geliştirme ve İşbirliği: Birden fazla geliştirici, aynı anda farklı dallarda çalışabilir. Bu, projenin hızlı ve etkili bir şekilde ilerlemesini sağlar.
+
+-Risk Azaltma: Eğer yeni bir özellik eklenirken bir şeyler ters giderse, bu sadece o dalı etkiler. Diğer dalar bu değişiklikten etkilenmez.
+
+-Geçmişin Saklanması: Her dal, projenin geçmişini temsil eder. Bu sayede, geçmişte yapılan değişikliklere kolayca geri dönülebilir.
+
+Kısacası, Git branch'ler, projenin farklı geliştirme yollarını ve versiyonlarını izlemek, paralel geliştirmeler yapmak ve riskleri azaltmak için önemlidir. Projelerin büyüklüğü ve karmaşıklığı arttıkça, doğru şekilde kullanılmaları daha da önemlidir.
+
+
+7- Yeni Bir Branch Oluşturmanın ve Branch'ler Arası Geçiş Yapmanın Adımlarını Açıklayınız.
+
+Yeni Bir Branch Oluşturma:
+
+1.Mevcut Durumu Kontrol Etme:
+İlk olarak, hangi branch üzerinde olduğunuzu ve mevcut durumu kontrol etmek için git status komutunu kullanın.
+
+2.Yeni Branch Oluşturma:
+Yeni bir branch oluşturmak için git branch komutunu kullanın. Örneğin, yeni bir branch oluşturmak için:
+
+git branch yeni_dal
+
+Bu komut, "yeni_dal" adında bir branch oluşturur, ancak henüz bu dala geçiş yapmaz.
+
+3.Yeni Dal'a Geçiş Yapma:
+Yeni oluşturduğunuz dalı aktif hale getirmek için git checkout komutunu kullanın:  git checkout yeni_dal
+
+veya git switch komutunu kullanarak:  git switch yeni_dal
+
+Artık "yeni_dal" dalındasınız ve bu dal üzerinde çalışmaya başlayabilirsiniz.
+
+
+8- Git Deposundaki Tüm Değişiklikleri Gösteren Komut Nedir?
+
+Git deposundaki tüm değişiklikleri göstermek için "git log" komutunu kullanabilirsiniz. Bu komut, tüm commitleri, commitlerin SHA kimlik numarasını, yazar bilgilerini, tarihleri ve commit mesajlarını listeler.
+
+Eğer sadece son commit'i görmek isterseniz, "git log -1" komutunu kullanabilirsiniz. Ayrıca, daha kısa bir özet görüntülemek için "git log --oneline" komutunu kullanabilirsiniz.
+
+
+9- Bir Dosyanın Eski Bir Sürümünü Nasıl Görüntülersiniz? (git show Kullanarak Açıklayın)
+
+Bir dosyanın eski bir sürümünü git show komutunu kullanarak görüntüleyebilirsiniz. git show komutu, belirli bir commit'in veya nesnenin içeriğini gösterir.
+
+Önce, belirli bir dosyanın eski sürümünün hangi commit'te olduğunu bulmalısınız. Bunun için git log komutunu kullanarak geçmişi inceleyebilirsiniz. Örnek olarak, dosya.txt adındaki dosyanın eski bir sürümünü göstermek için aşağıdaki adımları takip edebilirsiniz:
+
+1.Geçmişi İnceleme:  git log dosya.txt
+Bu komut, dosya.txt için yapılan commit geçmişini gösterir. Burada, ilginizi çeken eski sürümün commit kimliğini bulun.
+
+2.git show Kullanarak Eski Sürümü Gösterme:
+Örneğin, ABC123 adlı bir commit'in dosya.txt adlı dosyanın eski bir sürümü olduğunu farz edelim. git show komutunu kullanarak bu sürümü göstermek için:  git show ABC123:dosya.txt
+Bu komut, ABC123 commit'inin dosya.txt dosyasının içeriğini gösterir.
+
+
+10- .gitignore Dosyasının Amacını ve Nasıl Kullanılacağını Açıklayın.
+
+.gitignore dosyası, Git'in izlemesini istemediğiniz dosyaları ve klasörleri belirtmek için kullanılır. Bu dosya, proje dizininin kök dizininde bulunmalıdır.
+
+.gitignore Dosyasının Amacı:
+1.Geçici Dosyaları ve Derleme Çıktılarını İstemeyebilirsiniz
+2.Gizli Dosyaları ve Dizinleri İstemeyebilirsiniz
+3.Özel Ayar Dosyalarını İstemeyebilirsiniz
+
+.gitignore Dosyasının Kullanımı:
+1.Dosya veya Dizin Belirtme
+.gitignore dosyasına eklemek istediğiniz dosya veya dizinleri sadece adlarını yazmanız yeterlidir. Örneğin:
+
+dosya.txt
+klasor/
+
+2.Joker Karakterleri Kullanma
+Joker karakterleri (*) kullanarak belirli tipte dosyaları veya belirli desenlere uyan dosyaları belirtebilirsiniz. Örneğin:
+
+*.log       # Tüm .log uzantılı dosyaları
+build/      # build adlı tüm klasörleri
+
+3.Yorum Satırları
+# karakteri ile başlayan satırlar yorum satırlarıdır ve bu satırlar yorum olarak değerlendirilir.
+
+Örnek .gitignore Dosyası:
+
+# Derleme çıktıları
+build/
+
+# Geçici dosyalar
+*.swp
+
+# Gizli dosyalar
+.*
+
+# Kişisel ayar dosyaları
+config.json
+
+.gitignore dosyası, projenizin temiz ve düzenli kalmasına yardımcı olur ve gereksiz dosyaların Git tarafından takip edilmesini engeller.
+
+
+11- Conflict Nedir ve Bir Çakışmayı Nasıl Çözeriz?
+
+Conflict (çakışma), farklı dallarda yapılan değişikliklerin birleştirilmeye çalışıldığında, Git'in otomatik olarak çözümlenemediği durumdur. Bu durumda, aynı dosya veya satırlarda farklı değişiklikler yapılmış olabilir.
+
+Conflict çözümü için aşağıdaki adımları izleyebilirsiniz:
+
+1.Conflict Durumunu Tespit Etme:
+Conflict, git merge veya git pull komutları ile iki farklı daldaki değişiklikler birleştirilmeye çalışıldığında ortaya çıkar. Git, bu durumu algılar ve conflict olduğu dosyaları işaretler.
+
+2.Conflict Durumunu Görüntüleme:
+Conflict durumunu görmek için git status komutunu kullanın. Conflict olduğu belirtilen dosyalar özel bir şekilde listelenir.
+
+3.Conflict'i Açma:
+Conflict olduğu dosyalar, içlerinde <<<<<<<, ======= ve >>>>>>> gibi işaretlerle ayrılmış olarak gösterilir. Bu işaretler, iki farklı değişikliği ayıran sınırlayıcıdır. Örneğin:
+
+<<<<<<< HEAD
+Bu, mevcut dalın değişikliğidir.
+=======
+Bu, diğer dalın değişikliğidir.
+>>>>>>> branch_name
+
+Burada HEAD, mevcut dalı temsil ederken, branch_name diğer dalı temsil eder.
+
+4.Conflict'i Çözme:
+Conflict'i çözmek için, aşağıdaki adımları izleyin:
+
+İki değişiklik arasından hangisini kullanmak istiyorsanız, bu değişikliği seçin veya düzenleyin.
+
+Ayıklama işaretlerini (<<<<<<<, =======, >>>>>>>) ve aralarındaki farklılıkları temizleyin.
+
+Sonrasında, dosyayı kaydedin.
+
+5.Conflict'in İşaretlenmesi:
+Conflict'i çözdükten sonra, dosyayı tekrar işaretlemek için git add dosya_adı komutunu kullanın.
+
+6.Commit Yapma:
+Conflict'i çözüp dosyayı işaretledikten sonra, git commit komutu ile commit yapabilirsiniz. Git, conflict'in çözüldüğünü algılar.
+
+Artık conflict çözüldü ve işler normale döndü. Bu süreç, projede farklı ekiplerin veya farklı geliştiricilerin aynı dosyaları değiştirmesi durumunda sıklıkla kullanılır.
+
+
+12- Bir Branch Nasıl Birleştirilir? (Git Merge ile Açıklayınız)
+
+Bir branch, git merge komutu kullanılarak diğer bir branch ile birleştirilebilir. Bu işlem, bir dalın üzerinde yaptığınız değişiklikleri başka bir dal ile birleştirmenizi sağlar.
+
+İşte git merge ile branch birleştirme adımları:
+
+1.Hedef Dalı Belirleme:
+İlk olarak, hangi dalın hangi dala birleştirileceğini belirlemelisiniz. Örneğin, mevcut dalınızı main dalı ile birleştirmek istiyorsanız, aşağıdaki komutları kullanabilirsiniz:  git checkout main (Bu komut, main dala geçiş yapar.)
+
+2.Birleştirme İşlemi:
+Ardından, git merge komutunu kullanarak birleştirme işlemini başlatın:  git merge dal_adı (dal_adı, birleştirmek istediğiniz diğer daldır.)
+
+3.Conflict Durumları:
+Eğer birleştirme işlemi sırasında conflict olursa, Git bu durumu belirtir. Bu durumda, conflict çözülene kadar işlem tamamlanmaz.
+
+4.Conflict Çözümü ve Commit:
+Conflict durumunda, önce conflict'i çözün. Sonrasında dosyaları işaretleyip commit yaparak birleştirmeyi tamamlayın.
+
+git add dosya_adı
+git commit -m "Conflict çözüldü"
+
+Bu adımlar, conflict'in çözülmesini ve birleştirmenin tamamlanmasını sağlar.
+
+5.Push (Opsiyonel):
+Eğer değişikliklerinizi uzak depoya yollamak isterseniz, bunu git push komutu ile yapabilirsiniz: git push origin main
+Burada, main dalınızı origin adlı uzak depoya gönderiyorsunuz.
+
+
+13- Remote Repository Nedir ve Nasıl Eklenir? (git remote add ile açılkayınız)
+
+Uzak depo (Remote repository), projenizin lokal bilgisayarınız dışında başka bir yerde bulunan Git deposudur. Bu depo, genellikle çevrimiçi platformlarda (GitHub, GitLab, Bitbucket vb.) veya ağdaki diğer sunucularda barındırılır.
+
+git remote add komutu, yerel projenize bir uzak depo eklemenizi sağlar. Bu komut, uzak depoyu isimlendirir ve uzak depo ile iletişim kurmanızı sağlar.
+
+Uzak Depo Eklemenin Adımları:
+
+1.Uzak Depo Adını ve URL'sini Almanız Gereklidir:
+Önce, eklemek istediğiniz uzak deponun adını ve URL'sini bilmelisiniz. Örneğin, GitHub'da bir repo oluşturduysanız, bu repo için GitHub tarafından sağlanan URL'yi almalısınız.
+
+2.Uzak Depo Eklemek:
+git remote add komutunu kullanarak uzak depoyu ekleyin. Komutun yapısı şu şekildedir:  git remote add [uzak_depo_adı] [uzak_depo_URL]
+
+git remote add origin https://github.com/kullanici_adi/proje_adı.git
+
+Bu komut, origin adında bir uzak depo ekler.
+
+3.Uzak Depolarınızı Listeleme:
+Uzak depolarınızı görmek için git remote -v komutunu kullanabilirsiniz. Bu komut, projenize eklenmiş uzak depoların listesini ve URL'lerini gösterir:  git remote -v
+
+origin  https://github.com/kullanici_adi/proje_adı.git (fetch)
+origin  https://github.com/kullanici_adi/proje_adı.git (push)
+
+Yukarıdaki çıktıda, origin adlı uzak depo için hem fetch (alma) hem de push (gönderme) URL'leri gösterilmektedir.
+
+Artık projenize başarıyla bir uzak depo eklediniz. Bu depo ile çalışırken, değişikliklerinizi bu uzak depoya gönderebilir veya uzaktan alabilirsiniz.
+
+
+14- GitHub'da Bir Projenin README.md Dosyasının Önemini Açıklayınız?
+
+GitHub'da bir projenin README.md dosyası, projenin temel bilgilerini ve dokümantasyonunu sağlayan çok önemli bir dosyadır. İşte README.md dosyasının önemi:
+
+--Proje Hakkında Bilgi Verir:
+README.md dosyası, projenin ne yaptığını, amacını ve kapsamını tanımlar. Bu, projenin hızlı bir genel bakışını sunar.
+
+--Kurulum Talimatları Sağlar:
+Projeyi yerel ortamınıza nasıl kuracağınızı, gereksinimleri ve bağımlılıkları neler olduğunu açıklar. Bu, projeyi başlatmak isteyen diğer geliştiricilere rehberlik eder.
+
+--Kullanım Kılavuzu Sunar:
+Projeyi nasıl kullanacağınızı, temel komutları ve işlevleri açıklar. Bu, projenin potansiyel kullanıcıları için önemlidir.
+
+--Örnekler ve Demolar Ekleyebilir:
+Projenin nasıl kullanılacağını gösteren örnekler, kod blokları ve demo bağlantıları ekleyerek projenin anlaşılmasını kolaylaştırabilir.
+
+--Belgeler ve Referanslar Sağlar:
+Proje içerisindeki farklı bölümler, sınıflar, fonksiyonlar veya diğer bileşenler hakkında daha fazla bilgi sağlar. Bu, geliştiricilerin projenin iç yapısını anlamasına yardımcı olur.
+
+--Katkı ve Katkıda Bulunma Rehberi Sunar:
+Diğer geliştiricilerin projenize katkıda bulunmasını teşvik eder. Bu, açık kaynaklı projeler için çok önemlidir.
+
+--Lisans Bilgisi Ekler:
+Projede hangi lisansın kullanıldığını belirtir. Bu, projenin kullanım hakları ve kısıtlamaları hakkında bilgi verir.
+
+--Projenin Logosu veya Görüntüsünü Ekleyebilir:
+Görsel unsurlar, projenin daha çekici ve tanınabilir olmasını sağlar.
+
+--Topluluk ve İletişim Bilgileri Verir:
+Projenin iletişim kanalları, tartışma grupları veya diğer topluluk kaynakları hakkında bilgi sağlar.
+
+--Dökümantasyonun Sürekli Güncellenmesini Sağlar:
+Projenin gelişmeye devam ettiği sürece, README.md dosyası da güncellenmelidir. Bu, projenin her zaman en güncel bilgilere sahip olmasını sağlar.
+
+Sonuç olarak, README.md dosyası, projenin anlaşılmasını, kullanılmasını ve katkıda bulunulmasını kolaylaştıran kritik bir dokümantasyon aracıdır. Bu nedenle, her projede iyi bir README.md dosyasının bulunması önemlidir.
+
+
+15- GitHub'da Bir Projenin Issues ve Pull Requests Sekmelerinin Kullanımını Açıklayınız.
+
+GitHub'da "Issues" ve "Pull Requests" sekmeleri, projenin geliştirme sürecinde önemli rol oynar. İşte her birinin nasıl kullanılacağına dair bir açıklama:
+
+Issues (Sorunlar):
+Nedir?
+
+"Issues" sekmesi, projenin karşılaştığı sorunları, hataları, eksiklikleri ve geliştirmeleri takip etmek için kullanılır.
+Kısacası, projenin geliştirme sürecindeki tüm açık konuların (issues) listesini sunar.
+Neden Kullanılır?
+
+Kullanıcılar, geliştiriciler ve ekip üyeleri projenin karşılaştığı sorunları bildirebilir.
+Açık sorunlar, projenin geliştirme önceliklerini belirlemek ve takip etmek için kullanılır.
+Her soruna, açıklama, etiketler, atanan kişiler, proje bağlantısı gibi detaylar ekleyebilirsiniz.
+Nasıl Kullanılır?
+
+GitHub ana sayfanızda projenizin ana sayfasına gidin.
+Sekmelerin arasından "Issues" sekmesine tıklayın.
+Yeni bir sorun eklemek için "New issue" düğmesine tıklayın ve gerekli bilgileri girin.
+Mevcut sorunları gözden geçirebilir, üzerlerinde çalışabilir ve yorum yapabilirsiniz.
+Etiketler (Labels):
+
+Issues'lara etiketler ekleyerek, her bir sorunun kategorize edilmesini sağlayabilirsiniz. Örneğin, "bug" (hata), "enhancement" (geliştirme), "documentation" (belgeleme) gibi etiketler kullanılabilir.
+Milestone (Dönüm Noktası):
+
+Belirli bir dönemde gerçekleştirilmesi gereken işleri gruplamak için kullanılır. Örneğin, bir sürüm yayınlamak için gerekli olan işleri bir dönüm noktasında toplayabilirsiniz.
+Pull Requests (Çekme İstekleri):
+Nedir?
+
+"Pull Requests" sekmesi, bir dalın diğerine eklenmesi veya birleştirilmesi için yapılan talepleri listeler.
+Genellikle, bir geliştiricinin kendi dalındaki değişiklikleri ana dala eklemek istediğinde kullanılır.
+Neden Kullanılır?
+
+Geliştiriciler, kendi daldaki değişiklikleri ana dala eklemek için pull request oluşturabilir.
+Diğer geliştiriciler bu değişiklikleri inceleyebilir, tartışabilir ve onaylayabilir veya geri çevirebilir.
+Nasıl Kullanılır?
+
+GitHub ana sayfanızda projenizin ana sayfasına gidin.
+Sekmelerin arasından "Pull Requests" sekmesine tıklayın.
+Yeni bir çekme isteği oluşturmak için "New pull request" düğmesine tıklayın ve karşılaştırma yapmak istediğiniz dalları seçin.
+İstek oluşturulduktan sonra, diğer geliştiriciler bu değişiklikleri inceleyebilir, yorum yapabilir ve onaylayabilir.
+Reviewers ve Assignees (İnceleyenler ve Atanmış Kişiler):
+
+Bir çekme isteği oluştururken, inceleyenler ve atanan kişiler belirleyebilirsiniz. Bu, değişikliklerin doğrulaması ve onaylanması sürecini kolaylaştırır.
+Conversation (Tartışma):
+
+Pull request altında, değişiklikler hakkında yapılan tartışmalar ve yorumlar bulunur. Bu, değişikliklerin geliştirici topluluğu tarafından değerlendirilmesini sağlar.
+İssues ve pull requests, bir projenin katılımcıları arasında iletişim kurmayı, işbirliği yapmayı ve geliştirmeleri etkili bir şekilde yönetmeyi sağlar. Bu nedenle, GitHub projelerinin yönetiminde kritik bir rol oynarlar.
+
+
+16- Git ve GitHub'ın Bir Yzaılımcının İş Akışını Nasıl İyileştirebileceğini Açıklayın.
+
+Versiyon Kontrolü ve Takım Çalışması:
+
+Git, projenin farklı sürümlerini yönetmenizi sağlar. Bu, her zaman stabil bir sürüme geri dönebilmenizi ve ekip üyelerinin aynı projede çalışabilmesini sağlar.
+Branch'lerle Paralel Geliştirme:
+
+Her bir özellik veya geliştirme için ayrı branch'ler oluşturarak paralel çalışma sağlanır. Bu, bir özelliği geliştirirken diğer özellikler üzerinde çalışabilmenizi sağlar.
+Conflict Yönetimi:
+
+Git, farklı dallardaki çakışmaları yönetmek için mekanizmalar sunar. Bu, farklı ekip üyelerinin aynı dosyaları düzenlerken yaşadığı sorunları azaltır.
+Uzak Depo ile İşbirliği:
+
+GitHub gibi platformlar, ekip üyelerinin uzaktan çalışmasını kolaylaştırır. Projenin merkezi bir konumda tutulması ve herkesin güncel versiyonlarda çalışabilmesi sağlanır.
+Issues ve Pull Requests ile İletişim:
+
+GitHub, projenin karşılaştığı sorunları ve geliştirmeleri takip etmek için "Issues" sağlar. Ayrıca, değişiklikleri incelemek ve onaylamak için "Pull Requests" kullanılabilir.
+Dokümantasyon ve README.md:
+
+GitHub projeleri için README.md dosyaları, projenin temel bilgilerini ve dokümantasyonunu sağlar. Bu, projenin anlaşılmasını ve kullanılmasını kolaylaştırır.
+Continuous Integration (Sürekli Entegrasyon):
+
+GitHub Actions gibi araçlar, her commit veya push işlemi sonrasında otomatik testlerin çalışmasını sağlar. Bu, hataların hızla tespit edilmesini sağlar.
+Code Reviews (Kod İncelemeleri):
+
+Pull Requests üzerinden diğer geliştiricilerin kodları incelemesi ve onaylaması sağlanır. Bu, kalite kontrolünü artırır ve hataların azaltılmasına yardımcı olur.
+Issue ve Milestone Yönetimi:
+
+GitHub Issues, projenin karşılaştığı sorunları ve geliştirmeleri izlemek için kullanılır. Milestones, belirli bir dönemde gerçekleştirilmesi gereken işleri gruplar.
+CI/CD Entegrasyonu:
+
+Continuous Integration (Sürekli Entegrasyon) ve Continuous Deployment (Sürekli Dağıtım) süreçleri, GitHub Actions veya diğer CI/CD araçları ile entegre edilerek otomatize edilir.
+Bu yöntemler, bir yazılımcının çalışma akışını daha verimli hale getirmek için Git ve GitHub'ın sunduğu faydalardan sadece birkaçıdır. Bu araçlar, işbirliği, süreç otomasyonu ve projenin düzenli yönetimi gibi alanlarda büyük avantajlar sağlar.
